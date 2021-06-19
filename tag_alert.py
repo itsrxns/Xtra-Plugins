@@ -26,7 +26,7 @@ if TAG_LOGGER:
         datetime_tz = datetime.now(TZ)
         time_ =  datetime_tz.strftime("%H:%M:%S")
         final_tagged_msg = f"**🔔 Sei stato taggato da** {user_} **in** **<u>{chat_name}</u>** **alle ore {time_}** <u>[al seguente messaggio]({tagged_msg_link})</u>"
-        button_s = InlineKeyboardMarkup([[InlineKeyboardButton("🔔 View Message 🔔", url=tagged_msg_link)]])
+        button_s = InlineKeyboardMarkup([[InlineKeyboardButton("🆕 𝗧𝗔𝗚 | Vai al messaggio", url=tagged_msg_link)]])
         if Config.BOT_TOKEN:
             try:
                 await bot.send_message(Config.LOG_GRP, final_tagged_msg, reply_markup=button_s)
