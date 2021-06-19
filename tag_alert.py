@@ -1,11 +1,3 @@
-# Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
-#
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/DevsExpo/blob/master/LICENSE >
-#
-# All rights reserved.
-
 from main_startup.core.decorators import friday_on_cmd, Config, listen
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from main_startup import bot
@@ -33,7 +25,7 @@ if TAG_LOGGER:
         TZ = pytz.timezone(Config.TZ)
         datetime_tz = datetime.now(TZ)
         time_ =  datetime_tz.strftime("`%Y/%m/%d - %H:%M:%S`")
-        final_tagged_msg = f"**🔔 You Have Been** [Tagged]({tagged_msg_link}) **in** {chat_name} **By** {user_} **At** {time_}"
+        final_tagged_msg = f"**🔔 Sei stato taggato da** {user_} **in** <u>{chat_name}</u> **alle ore {time}** <u>[al seguente messaggio]({tagged_msg_link})</u>"
         button_s = InlineKeyboardMarkup([[InlineKeyboardButton("🔔 View Message 🔔", url=tagged_msg_link)]])
         if Config.BOT_TOKEN:
             try:
